@@ -1,0 +1,38 @@
+package com.example.mypackage;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.Iterator;
+import java.util.List;
+
+import com.example.mypackage.HDTVComparator.NameComparator;
+
+public class HELLOHDTV {
+	
+public static void main(String[] args) {
+		
+	List<HDTV>  onida=new ArrayList<>();
+
+		  onida.add(new HDTV("LG", 70));
+			onida.add(new HDTV("SAMSUNG", 85));
+			onida.add(new HDTV("PHILLIPS", 110));
+			
+			Collections.sort(onida, new HDTVComparator());
+			Iterator itr2=onida.iterator();  
+			while(itr2.hasNext())
+			{  
+			HDTV st=(HDTV)itr2.next();  
+			System.out.println(st.size+" "+st.brandname+"");  	
+			
+      NameComparator n=new NameComparator();
+				Collections.sort(onida, n);
+			Iterator itr=onida.iterator();  
+			while(itr.hasNext())
+			{  
+			HDTV st1=(HDTV)itr2.next();  
+			System.out.println(st1.size+" "+st1.brandname+"");  
+			}
+	}
+}
+}
